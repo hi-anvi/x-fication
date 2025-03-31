@@ -1,1 +1,15 @@
 /* Animtion for starting of game */
+@keyframes bigger {
+    from {
+        font-size: 10px;
+    }
+
+    to {
+        font-size: 100px;
+    }
+}
+#centre {
+    text-align: center;
+    animation-name: bigger; 
+    animation-duration: 3s;
+}
