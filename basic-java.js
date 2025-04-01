@@ -1,5 +1,6 @@
 var centre = document.getElementById("centre");
-centre.addEventListener("animationend", function() {
-  centre.style.display = "none"; // Removes element from the DOM
-});
-
+var disappear = function() {
+  centre.style.display = "none";
+}
+centre.addEventListener("animationend", disappear);
+centre.addEventListener("animationiteration", disappear);
