@@ -12,6 +12,13 @@
             <h1>Presented By</h1>
             <h1>Anvi</h1>
         </div>
-        <script src="https://hi-anvi.github.io/x-fication/basic-java.js"></script>
+        <script>
+            var centre = document.getElementById("centre");
+            var disappear = function() {
+              centre.style.display = "none";
+            };
+            centre.addEventListener("animationend", disappear);
+            centre.addEventListener("animationiteration", disappear);
+        </script>
     </body>
 </html>
