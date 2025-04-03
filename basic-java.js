@@ -3,4 +3,3 @@ var disappear = function() {
   centre.style.display = "none";
 };
 centre.addEventListener("animationend", disappear);
-centre.addEventListener("animationiteration", disappear);
