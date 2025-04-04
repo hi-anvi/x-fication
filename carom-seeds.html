@@ -3,16 +3,95 @@
     <head>
         <meta charset="utf-8">
         <title>Carom-fication</title>
-        <link rel="stylesheet" href="https://hi-anvi.github.io/x-fication/animation-start.css">
         <style>
+            /* Animtion for starting of game */
+            @keyframes bigger {
+                from {
+                    font-size: 10px;
+                }
+
+                to {
+                    font-size: 100px;
+                }
+            }
+            #centre {
+                text-align: center;
+                animation-name: bigger;
+                animation-duration: 3s;
+            }
+            #main {
+                display: none;
+                font-family: Marker Felt, "Bradley Hand", cursive;
+            }
+            #less {
+                width: 400px;
+                margin: auto;
+                border: 5px dashed red;
+                padding: 10px;
+                background-color: rgb(0, 255, 229);
+            }
+            em {
+                color: blue;
+            }
+            #next {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: gold;
+                width: 50px;
+                height: 30px;
+                border: 10px double rgb(120, 24, 211);
+                border-radius: 10px;
+                padding: 2px;
+            }
+            body {
+                background-color: bisque;
+            }
+            #level-home {
+                display: none;
+                font-family: Arial, Helvetica, sans-serif;
+            }
         </style>
     </head>
     <body>
         <div id="centre">
-            <h1>Presented By</h1>
-            <h1>Anvi</h1>
+            <h1>Presented By:</h1>
+            <h1>Anvi Gupta</h1>
         </div>
-        <script src="https://hi-anvi.github.io/x-fication/basic-java.js">
+
+        <div id="main">
+            <div id="less">
+                <h1>Carom Seeds, also commonly known as Ajwain, is a spice mainly used in India to cook many delicious foods.</h1>
+                <h2>This game is designed for CRAZY Ajwain lovers who just love to eat it even raw and just can't live without it!!!! In this
+                game we shall see what would happen if we added Ajwain in <strong>CRAZY</strong> amounts to almost all foods and will
+                find out where Ajwain has its best use.<br><strong><em>Hope you enjoy it!!</em></strong></h2> 
+                <h3 id="next">Next</h3>
+            </div>
+            <div id="level-home">
+                <h2>
+                    <div class="l1">Level 1</div>
+                </h2>
+            </div>
+        </div>
+        <script>
+            var centre = document.getElementById("centre");
+            var main = document.getElementById("main");
+            var next = document.getElementById("next");
+            var defAjwain = document.getElementById("less");
+            var levels = document.getElementById("level-home");
+
+            var disappear = function() {
+                centre.style.display = "none";
+                main.style.display = "block";
+            };
+
+            centre.addEventListener("animationend", disappear);
+
+            var nextPressed = function() {
+                defAjwain.style.display = "none";
+                levels.style.display = "inline-flex";
+                levels.style.flexWrap = "wrap";
+            };
+
+            next.addEventListener("click", nextPressed);
         </script>
     </body>
 </html>
