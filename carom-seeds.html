@@ -45,6 +45,18 @@
             body {
                 background-color: bisque;
             }
+            .l {
+                padding: 10px;
+                margin-right: 100px;
+                margin-left: 100px;
+                border: 4px solid black;
+                border-radius: 10px;
+                margin-top: 50px;
+                display: inline-flex;
+                flex-wrap: wrap;
+                background-color: white;
+            }
+
             #level-home {
                 display: none;
                 font-family: Arial, Helvetica, sans-serif;
@@ -67,7 +79,46 @@
             </div>
             <div id="level-home">
                 <h2>
-                    <div class="l1">Level 1</div>
+                    <div class="l">
+                        Level 1 <br>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSifBmNFUYTI_3YSev5KePEN4-DbTOiFr7RcA&s" width="50px" data-lock="false">
+                    </div>
+                    <div class="l">
+                        Level 2 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 3 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 4 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 5 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 6 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 7 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 8 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 9 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 10 - Free Play <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
                 </h2>
             </div>
         </div>
@@ -76,7 +127,8 @@
             var main = document.getElementById("main");
             var next = document.getElementById("next");
             var defAjwain = document.getElementById("less");
-            var levels = document.getElementById("level-home");
+            var levelAll = document.getElementById("level-home");
+            var level = document.getElementsByClassName("l");
 
             var disappear = function() {
                 centre.style.display = "none";
@@ -87,11 +139,23 @@
 
             var nextPressed = function() {
                 defAjwain.style.display = "none";
-                levels.style.display = "inline-flex";
-                levels.style.flexWrap = "wrap";
+                levelAll.style.display = "inline-flex";
+                levelAll.style.flexWrap = "wrap";
             };
 
             next.addEventListener("click", nextPressed);
+
+            var levelClick = function() {
+                var imgEl = this.querySelector("img");
+                if (imgEl.dataset.lock === "true") {
+                    alert("You have to pass the previous levels before you can attempt this!!");
+                }
+            };
+
+            for(var i = 0; i < level.length; i++) {
+                level[i].addEventListener("click", levelClick);
+            };
+
         </script>
     </body>
 </html>
