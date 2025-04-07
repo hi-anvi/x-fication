@@ -54,10 +54,22 @@
                 flex-wrap: wrap;
                 background-color: white;
             }
-
             #level-home {
                 display: none;
                 font-family: Arial, Helvetica, sans-serif;
+            }
+            #l1 {
+                display: none;
+                background-color: greenyellow;
+                padding: 10px;
+                border: 7px ridge cyan;
+            }
+            .spoon-circle {
+                border: 2px solid black;
+                border-radius: 50px;
+                width: 50px;
+                height: 50px;
+                background-color: darkgray;
             }
         </style>
     </head>
@@ -119,14 +131,25 @@
                     </div>
                 </h2>
             </div>
+            <div id="l1">
+                <h1>Put in 3 teaspoons of Ajwain (Carom Seeds) - Recipe Masala Paranthas</h1>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ03Ip0i14cqMc-UihM1mUvsfU_GgshzzCQw&s" alt="stove" width="300px">
+                <div class="spoon">
+                    <div class="spoon-circle"></div>
+                    <div class="spoon-rect"></div>
+                </div>
+                <h2>A</h2>
+            </div>
         </div>
         <script>
             var centre = document.getElementById("centre");
+            var body = document.getElementsByTagName("body");
             var main = document.getElementById("main");
             var next = document.getElementById("next");
             var defAjwain = document.getElementById("less");
             var levelAll = document.getElementById("level-home");
             var level = document.getElementsByClassName("l");
+            var level1 = document.getElementById("l1");
 
             var disappear = function() {
                 centre.style.display = "none";
@@ -147,6 +170,10 @@
                 var imgEl = this.querySelector("img");
                 if (imgEl.dataset.lock === "true") {
                     alert("You have to pass the previous levels before you can attempt this!!");
+                } else {
+                    levelAll.style.display = "none";
+                    l1.style.display = "block";
+                    body[0].style.backgroundColor = "whitesmoke";
                 }
             };
 
