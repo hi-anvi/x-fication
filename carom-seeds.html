@@ -64,12 +64,27 @@
                 padding: 10px;
                 border: 7px ridge cyan;
             }
-            .spoon-circle {
-                border: 2px solid black;
+            #stove {
+                border: 10px ridge red;
                 border-radius: 50px;
+            }
+            .item-holder {
+                right: 30px;
+                width: 400px;
+                padding: 10px;
+            }
+            .item {
+                display: inline-flex;
+                flex-wrap: wrap;
+                border: 4px solid darkred;
+                background-color: brown;
+                border-radius: 5px;
+                margin: 10px;
+                padding: 20px;
                 width: 50px;
-                height: 50px;
-                background-color: darkgray;
+            }
+            #done {
+                display: none;
             }
         </style>
     </head>
@@ -132,14 +147,17 @@
                 </h2>
             </div>
             <div id="l1">
-                <h1>Put in 3 teaspoons of Ajwain (Carom Seeds) - Recipe Masala Paranthas</h1>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ03Ip0i14cqMc-UihM1mUvsfU_GgshzzCQw&s" alt="stove" width="300px">
-                <div class="spoon">
-                    <div class="spoon-circle"></div>
-                    <div class="spoon-rect"></div>
+                <h2 style="right: 10px;">Level 1</h2>
+                <h1>Put in 3 teaspoons of Ajwain (Carom Seeds) - Recipe Masala Laccha Paratha</h1>
+                <img src="https://img.freepik.com/premium-vector/pan-stove-cartoon_119631-390.jpg" alt="stove" width="300px" id="stove">
+                <img src="https://png.pngtree.com/png-clipart/20220801/ourmid/pngtree-cartoon-wooden-spoon-png-image_6094392.png" alt="spoon" width="75px" draggable="true" class="spoon">
+                <div class="item-holder">
+                    <p class="item">Ajwain</p>
                 </div>
+                <h3>In Spoon: <span id="in-spoon">NA</span></h3>
                 <h2>A</h2>
             </div>
+            <div id="done"><h4>Well done</h4></div>
         </div>
         <script>
             var centre = document.getElementById("centre");
@@ -150,6 +168,10 @@
             var levelAll = document.getElementById("level-home");
             var level = document.getElementsByClassName("l");
             var level1 = document.getElementById("l1");
+            var textSpoon = document.getElementById("in-spoon");
+            var stove = document.getElementById("stove");
+            var count = 0;
+            var doneL1 = document.getElementById("done");
 
             var disappear = function() {
                 centre.style.display = "none";
@@ -180,6 +202,39 @@
             for(var i = 0; i < level.length; i++) {
                 level[i].addEventListener("click", levelClick);
             };
+
+            var onDragStart = function(event) {
+                event.dataTransfer.setData("text/plain", "https://png.pngtree.com/png-clipart/20220801/ourmid/pngtree-cartoon-wooden-spoon-png-image_6094392.png");
+            };
+
+            var spoonOn = function(event) {
+                if (event.target.className == "item") {
+                    textSpoon.innerHTML = "Ajwain";
+                }
+            };
+
+            var spoonOnOther = function(event) {
+                event.preventDefault();
+            };
+
+            var spoonDrop = function(event) {
+                event.preventDefault();
+                if (event.target.id == "stove") {
+                    if (textSpoon.innerHTML == "Ajwain") {
+                        count++;
+                    }
+                    textSpoon.innerHTML = "Empty";
+                }
+                if (count == 3) {
+                    level1.style.display = "none";
+                    doneL1.style.display = "block";
+                }
+            };
+
+            level1.addEventListener("dragstart", onDragStart);
+            level1.addEventListener("dragenter", spoonOn);
+            level1.addEventListener("dragover", spoonOnOther);
+            level1.addEventListener("drop", spoonDrop);
 
         </script>
     </body>
