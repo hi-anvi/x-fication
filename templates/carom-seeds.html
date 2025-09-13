@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Carom-fication</title>
+        <style>
+            /* Animtion for starting of game */
+            @keyframes bigger {
+                from {
+                    font-size: 10px;
+                }
+
+                to {
+                    font-size: 100px;
+                }
+            }
+            #centre {
+                text-align: center;
+                animation-name: bigger;
+                animation-duration: 3s;
+            }
+            #main {
+                display: none;
+                font-family: Marker Felt, "Bradley Hand", cursive;
+            }
+            #less {
+                width: 400px;
+                margin: auto;
+                border: 5px dashed red;
+                padding: 10px;
+                background-color: rgb(0, 255, 229);
+            }
+            em {
+                color: blue;
+            }
+            #next {
+                font-family: 'Courier New', Courier, monospace;
+                background-color: gold;
+                width: 50px;
+                height: 30px;
+                border: 10px double rgb(120, 24, 211);
+                border-radius: 10px;
+                padding: 2px;
+            }
+            body {
+                background-color: bisque;
+            }
+            .l {
+                padding: 10px;
+                margin: 75px;
+                border: 4px solid black;
+                border-radius: 10px;
+                display: inline-flex;
+                flex-wrap: wrap;
+                background-color: white;
+            }
+            #level-home {
+                display: none;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            #l1 {
+                display: none;
+                background-color: greenyellow;
+                padding: 10px;
+                border: 7px ridge cyan;
+            }
+            #stove {
+                border: 10px ridge red;
+                border-radius: 50px;
+            }
+            .item-holder {
+                right: 30px;
+                width: 400px;
+                padding: 10px;
+            }
+            .item {
+                display: inline-flex;
+                flex-wrap: wrap;
+                border: 4px solid darkred;
+                background-color: brown;
+                border-radius: 5px;
+                margin: 10px;
+                padding: 20px;
+                width: 50px;
+            }
+            #done {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="centre">
+            <h1>Presented By:</h1>
+            <h1>Anvi Gupta</h1>
+        </div>
+
+        <div id="main">
+            <div id="less">
+                <h1>Carom Seeds, also commonly known as Ajwain, is a spice mainly used in India to cook many delicious foods.</h1>
+                <h2>This game is designed for CRAZY Ajwain lovers who just love to eat it even raw and just can't live without it!!!! In this
+                game we shall see what would happen if we added Ajwain in <strong>CRAZY</strong> amounts to almost all foods and will
+                find out where Ajwain has its best use.<br><strong><em>Hope you enjoy it!!</em></strong></h2> 
+                <h3 id="next">Next</h3>
+            </div>
+            <div id="level-home">
+                <h2>
+                    <div class="l">
+                        Level 1 <br>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSifBmNFUYTI_3YSev5KePEN4-DbTOiFr7RcA&s" width="50px" data-lock="false">
+                    </div>
+                    <div class="l">
+                        Level 2 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 3 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 4 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 5 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 6 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 7 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 8 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 9 <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                    <div class="l">
+                        Level 10 - Free Play <br>
+                        <img src="https://st4.depositphotos.com/1742172/22553/v/450/depositphotos_225531632-stock-illustration-cartoon-doodle-padlock-vector-illustration.jpg" width="50px" data-lock="true">
+                    </div>
+                </h2>
+            </div>
+            <div id="l1">
+                <h2 style="right: 10px;">Level 1</h2>
+                <h1>Put in 3 teaspoons of Ajwain (Carom Seeds) - Recipe Masala Laccha Paratha</h1>
+                <img src="https://img.freepik.com/premium-vector/pan-stove-cartoon_119631-390.jpg" alt="stove" width="300px" id="stove">
+                <img src="https://png.pngtree.com/png-clipart/20220801/ourmid/pngtree-cartoon-wooden-spoon-png-image_6094392.png" alt="spoon" width="75px" draggable="true" class="spoon">
+                <div class="item-holder">
+                    <p class="item">Ajwain</p>
+                </div>
+                <h3>In Spoon: <span id="in-spoon">NA</span></h3>
+                <h2>A</h2>
+            </div>
+            <div id="done"><h4>Well done</h4></div>
+        </div>
+        <script>
+            var centre = document.getElementById("centre");
+            var body = document.getElementsByTagName("body");
+            var main = document.getElementById("main");
+            var next = document.getElementById("next");
+            var defAjwain = document.getElementById("less");
+            var levelAll = document.getElementById("level-home");
+            var level = document.getElementsByClassName("l");
+            var level1 = document.getElementById("l1");
+            var textSpoon = document.getElementById("in-spoon");
+            var stove = document.getElementById("stove");
+            var count = 0;
+            var doneL1 = document.getElementById("done");
+
+            var disappear = function() {
+                centre.style.display = "none";
+                main.style.display = "block";
+            };
+
+            centre.addEventListener("animationend", disappear);
+
+            var nextPressed = function() {
+                defAjwain.style.display = "none";
+                levelAll.style.display = "inline-flex";
+                levelAll.style.flexWrap = "wrap";
+            };
+
+            next.addEventListener("click", nextPressed);
+
+            var levelClick = function() {
+                var imgEl = this.querySelector("img");
+                if (imgEl.dataset.lock === "true") {
+                    alert("You have to pass the previous levels before you can attempt this!!");
+                } else {
+                    levelAll.style.display = "none";
+                    l1.style.display = "block";
+                    body[0].style.backgroundColor = "whitesmoke";
+                }
+            };
+
+            for(var i = 0; i < level.length; i++) {
+                level[i].addEventListener("click", levelClick);
+            };
+
+            var onDragStart = function(event) {
+                event.dataTransfer.setData("text/plain", "https://png.pngtree.com/png-clipart/20220801/ourmid/pngtree-cartoon-wooden-spoon-png-image_6094392.png");
+            };
+
+            var spoonOn = function(event) {
+                if (event.target.className == "item") {
+                    textSpoon.innerHTML = "Ajwain";
+                }
+            };
+
+            var spoonOnOther = function(event) {
+                event.preventDefault();
+            };
+
+            var spoonDrop = function(event) {
+                event.preventDefault();
+                if (event.target.id == "stove") {
+                    if (textSpoon.innerHTML == "Ajwain") {
+                        count++;
+                    }
+                    textSpoon.innerHTML = "Empty";
+                }
+                if (count == 3) {
+                    level1.style.display = "none";
+                    doneL1.style.display = "block";
+                }
+            };
+
+            level1.addEventListener("dragstart", onDragStart);
+            level1.addEventListener("dragenter", spoonOn);
+            level1.addEventListener("dragover", spoonOnOther);
+            level1.addEventListener("drop", spoonDrop);
+
+        </script>
+    </body>
+</html>
